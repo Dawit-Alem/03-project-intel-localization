@@ -253,6 +253,70 @@ a:hover {
   }
 }
 
+/* ── Footer ── */
+.site-footer {
+  background: linear-gradient(180deg, #344f7c 0%, #0b3d91 100%);
+  color: #fff;
+  padding: 40px 16px;
+}
+
+.footer-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 12px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: flex-end;
+}
+
+.footer-links li a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* RTL Support for Footer */
+[dir="rtl"] .footer-links {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .site-footer .col-md-4 {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .site-footer .col-md-4 {
+    text-align: center;
+  }
+}
+
 /* ── Learn More Button ── */
 .learn-more-btn {
   display: inline-block;
