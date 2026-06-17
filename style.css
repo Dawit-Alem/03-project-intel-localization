@@ -1,3 +1,279 @@
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] .hero-inner {
+  text-align: center;
+}
+
+[dir="rtl"] .cards-scroll {
+  direction: rtl;
+}
+
+[dir="rtl"] .timeline-note {
+  text-align: center;
+}
+
+/* Feature Box Icons */
+.feature-box {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #dbe2ef;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  padding: 36px 28px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(30, 100, 210, 0.15);
+}
+
+.feature-icon {
+  font-size: 2.8rem;
+  color: #1e64d2;
+  margin-bottom: 16px;
+}
+
+.feature-box h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #0b3d91;
+  margin-bottom: 12px;
+}
+
+.feature-box p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin: 0;
+}
+
+/* ── Section Heading ── */
+.section-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: #102a43;
+  margin-bottom: 40px;
+}
+
+/* ── Card Year Badge ── */
+.card-year {
+  background: #1e64d2;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* ── Timeline Panel Heading ── */
+.timeline-panel h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #102a43;
+  margin: 0;
+}
+
+/* ── Hero Contrast Boost ── */
+.hero-copy h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.hero-copy p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.05rem;
+}
+
+/* ── Timeline Note ── */
+.timeline-note {
+  font-size: 0.82rem;
+  color: #4a5568;
+  text-align: center;
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Feature Box Typography ── */
+.feature-box h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b3d91;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+/* ── Global Link Style ── */
+a {
+  color: #1e64d2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0b3d91;
+  text-decoration: underline;
+}
+
+/* ── Focus Visible for Keyboard Nav ── */
+:focus-visible {
+  outline: 3px solid #1e64d2;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Newsletter Section ── */
+.newsletter-section {
+  background: linear-gradient(180deg, #344f7c 0%, #1e64d2 100%);
+  padding: 60px 16px;
+}
+
+.newsletter-box {
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.15);
+  padding: 48px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.newsletter-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: #102a43;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.newsletter-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.newsletter-form .form-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #102a43;
+  margin-bottom: 6px;
+}
+
+.newsletter-form .form-label span {
+  color: #e53e3e;
+}
+
+.newsletter-form .form-control,
+.newsletter-form .form-select {
+  border: 1px solid #dbe2ef;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #102a43;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsletter-form .form-control:focus,
+.newsletter-form .form-select:focus {
+  border-color: #1e64d2;
+  box-shadow: 0 0 0 3px rgba(30, 100, 210, 0.15);
+  outline: none;
+}
+
+.newsletter-form .form-text {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-top: 4px;
+}
+
+.newsletter-form .form-check-input:checked {
+  background-color: #1e64d2;
+  border-color: #1e64d2;
+}
+
+.newsletter-form .form-check-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.newsletter-btn {
+  background: linear-gradient(135deg, #0b3d91 0%, #1e64d2 100%);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 36px;
+  border-radius: 999px;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.newsletter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(30, 100, 210, 0.3);
+  color: #fff;
+}
+
+/* RTL Support for Form */
+[dir="rtl"] .newsletter-form .form-check {
+  padding-right: 1.5em;
+  padding-left: 0;
+}
+
+[dir="rtl"] .newsletter-form .form-check-input {
+  float: right;
+  margin-right: -1.5em;
+  margin-left: 0;
+}
+
+@media (max-width: 520px) {
+  .newsletter-box {
+    padding: 32px 20px;
+  }
+}
+
+/* ── Skip Link for Keyboard Navigation ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: #0b3d91;
+  color: #fff;
+  padding: 12px 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 0 0 8px 0;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 * {
   box-sizing: border-box;
 }
