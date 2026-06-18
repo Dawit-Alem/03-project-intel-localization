@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link id="bootstrap-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -25,7 +25,7 @@
   <main id="main-content" role="main" aria-label="Sustainability Timeline">
     <section class="timeline-panel">
       <div class="cards-scroll">
-        <article class="timeline-card" role="article" tabindex="0" aria-label="1968 - Intel Founded">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="1968 - Intel Founded" data-bs-toggle="modal" data-bs-target="#modal1968">
           <div class="card-image">
             <img src="img/intel founded.jpg" alt="Intel founded in 1968">
             <div class="card-overlay">
@@ -38,7 +38,7 @@
           </div>
         </article>
 
-        <article class="timeline-card" role="article" tabindex="0" aria-label="1971 - First Microprocessor">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="1971 - First Microprocessor" data-bs-toggle="modal" data-bs-target="#modal1971">
           <div class="card-image">
             <img src="img/first microprocessor.jpg" alt="First microprocessor">
             <div class="card-overlay">
@@ -51,7 +51,7 @@
           </div>
         </article>
 
-        <article class="timeline-card" role="article" tabindex="0" aria-label="1978 - 8086 Processor">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="1978 - 8086 Processor" data-bs-toggle="modal" data-bs-target="#modal1978">
           <div class="card-image">
             <img src="img/8086 processor.jpg" alt="8086 processor">
             <div class="card-overlay">
@@ -64,7 +64,7 @@
           </div>
         </article>
 
-        <article class="timeline-card" role="article" tabindex="0" aria-label="1985 - 386 Processor">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="1985 - 386 Processor" data-bs-toggle="modal" data-bs-target="#modal1985">
           <div class="card-image">
             <img src="img/386.jpg" alt="386 processor">
             <div class="card-overlay">
@@ -77,7 +77,7 @@
           </div>
         </article>
 
-        <article class="timeline-card" role="article" tabindex="0" aria-label="2006 - Peak GHG Emissions">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="2006 - Peak GHG Emissions" data-bs-toggle="modal" data-bs-target="#modal2006">
           <div class="card-image">
             <img src="img/PeakGHG.png" alt="Peak greenhouse gas emissions">
             <div class="card-overlay">
@@ -90,7 +90,7 @@
           </div>
         </article>
 
-        <article class="timeline-card" role="article" tabindex="0" aria-label="2020 - RISE Strategy">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="2020 - RISE Strategy" data-bs-toggle="modal" data-bs-target="#modal2020">
           <div class="card-image">
             <img src="img/rise.png" alt="RISE strategy">
             <div class="card-overlay">
@@ -103,7 +103,7 @@
           </div>
         </article>
 
-        <article class="timeline-card" role="article" tabindex="0" aria-label="2022 - Net-Zero By 2040">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="2022 - Net-Zero By 2040" data-bs-toggle="modal" data-bs-target="#modal2022">
           <div class="card-image">
             <img src="img/netZero.jpg" alt="Net-zero by 2040">
             <div class="card-overlay">
@@ -116,7 +116,7 @@
           </div>
         </article>
 
-        <article class="timeline-card" role="article" tabindex="0" aria-label="2023 - Renewable Electricity">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="2023 - Renewable Electricity" data-bs-toggle="modal" data-bs-target="#modal2023">
           <div class="card-image">
             <img src="img/renewable.png" alt="Renewable electricity">
             <div class="card-overlay">
@@ -129,7 +129,7 @@
           </div>
         </article>
 
-        <article class="timeline-card" role="article" tabindex="0" aria-label="2024 - Sustainability Summit">
+        <article class="timeline-card" role="article" tabindex="0" aria-label="2024 - Sustainability Summit" data-bs-toggle="modal" data-bs-target="#modal2024">
           <div class="card-image">
             <img src="img/sustainability.png" alt="Sustainability summit">
             <div class="card-overlay">
@@ -304,5 +304,253 @@
     </footer>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Auto-Detect Language & Adjust RTL -->
+  <script>
+    function applyDirection(lang) {
+      const rtlLanguages = ['ar', 'he', 'fa', 'ur', 'ps', 'ku'];
+      const isRTL = rtlLanguages.some(rtlLang => lang.toLowerCase().startsWith(rtlLang));
+      
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      document.documentElement.setAttribute('lang', lang);
+
+      // Swap Bootstrap stylesheet based on direction
+      const bootstrapLink = document.getElementById('bootstrap-css');
+      if (isRTL) {
+        bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css';
+      } else {
+        bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+      }
+    }
+
+    // Observe Google Translate language changes
+    function observeLanguageChange() {
+      const observer = new MutationObserver(() => {
+        const htmlLang = document.documentElement.getAttribute('lang') || 'en';
+        const translateLang = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('googtrans='))
+          ?.split('=')[1]
+          ?.split('/')[2];
+
+        const detectedLang = translateLang || htmlLang;
+        applyDirection(detectedLang);
+      });
+
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['lang', 'class']
+      });
+    }
+
+    // Also detect lang attribute changes on <html> directly
+    function observeHTMLClass() {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName === 'class') {
+            const htmlClass = document.documentElement.className;
+            if (htmlClass.includes('translated-rtl')) {
+              document.documentElement.setAttribute('dir', 'rtl');
+            } else if (htmlClass.includes('translated-ltr')) {
+              document.documentElement.setAttribute('dir', 'ltr');
+            }
+          }
+        });
+      });
+
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+    }
+
+    // Run on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      observeLanguageChange();
+      observeHTMLClass();
+    });
+  </script>
+
+  <!-- Modals -->
+
+  <!-- 1968 -->
+  <div class="modal fade" id="modal1968" tabindex="-1" aria-labelledby="modal1968Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">1968</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/intel founded.jpg" alt="Intel founded in 1968" class="modal-img" />
+          <h2 id="modal1968Label">Intel Founded</h2>
+          <p>Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation in 1968, laying the foundation for decades of technological innovation. The name "Intel" stands for Integrated Electronics, reflecting the company's mission to push the boundaries of what's possible in computing.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1971 -->
+  <div class="modal fade" id="modal1971" tabindex="-1" aria-labelledby="modal1971Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">1971</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/first microprocessor.jpg" alt="First microprocessor" class="modal-img" />
+          <h2 id="modal1971Label">First Microprocessor</h2>
+          <p>Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution. Designed by Federico Faggin, Ted Hoff, and Stanley Mazor, the 4004 packed 2,300 transistors into a chip the size of a fingernail, delivering as much computing power as the first electronic computer, ENIAC.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1978 -->
+  <div class="modal fade" id="modal1978" tabindex="-1" aria-labelledby="modal1978Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">1978</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/8086 processor.jpg" alt="8086 processor" class="modal-img" />
+          <h2 id="modal1978Label">8086 Processor</h2>
+          <p>The 8086 processor establishes the x86 architecture that drives countless PCs and servers worldwide. This 16-bit microprocessor became the foundation for the personal computer revolution and its architecture is still at the core of modern processors today, making it one of the most influential chip designs in history.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1985 -->
+  <div class="modal fade" id="modal1985" tabindex="-1" aria-labelledby="modal1985Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">1985</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/386.jpg" alt="386 processor" class="modal-img" />
+          <h2 id="modal1985Label">386 Processor</h2>
+          <p>Intel introduces the 386 with 32-bit architecture, powering stronger performance and multitasking. The Intel 386 processor contained 275,000 transistors — more than 100 times the number in the original 4004 — and enabled a new generation of software that transformed personal computing and business productivity.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2006 -->
+  <div class="modal fade" id="modal2006" tabindex="-1" aria-labelledby="modal2006Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">2006</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/PeakGHG.png" alt="Peak greenhouse gas emissions" class="modal-img" />
+          <h2 id="modal2006Label">Peak GHG Emissions</h2>
+          <p>Intel hits its highest greenhouse gas emissions in 2006, then makes a decisive commitment to reverse the trend. The company invests heavily in renewable energy, chemical alternatives, and energy efficiency programs across its global manufacturing operations, setting the stage for decades of environmental progress.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2020 -->
+  <div class="modal fade" id="modal2020" tabindex="-1" aria-labelledby="modal2020Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">2020</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/rise.png" alt="RISE strategy" class="modal-img" />
+          <h2 id="modal2020Label">RISE Strategy</h2>
+          <p>Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals to accelerate climate action, water stewardship, and waste reduction. RISE represents Intel's most comprehensive sustainability framework, aligning business objectives with global environmental and social responsibility targets.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2022 -->
+  <div class="modal fade" id="modal2022" tabindex="-1" aria-labelledby="modal2022Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">2022</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/netZero.jpg" alt="Net-zero by 2040" class="modal-img" />
+          <h2 id="modal2022Label">Net-Zero By 2040</h2>
+          <p>Intel commits to achieving net-zero greenhouse gas emissions across its global operations by 2040. This pledge covers Scope 1 and Scope 2 emissions and builds on Intel's decades of environmental initiatives, renewable energy investments, and partnerships across the semiconductor industry to drive systemic change.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2023 -->
+  <div class="modal fade" id="modal2023" tabindex="-1" aria-labelledby="modal2023Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">2023</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/renewable.png" alt="Renewable electricity" class="modal-img" />
+          <h2 id="modal2023Label">Renewable Electricity</h2>
+          <p>Intel reaches 99% renewable electricity use worldwide, significantly cutting carbon emissions and advancing energy sustainability. This milestone is achieved through a combination of direct renewable energy purchases, power purchase agreements, and on-site solar installations across Intel's global campuses and manufacturing facilities.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2024 -->
+  <div class="modal fade" id="modal2024" tabindex="-1" aria-labelledby="modal2024Label" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal">
+        <div class="modal-header">
+          <span class="modal-year">2024</span>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/sustainability.png" alt="Sustainability summit" class="modal-img" />
+          <h2 id="modal2024Label">Sustainability Summit</h2>
+          <p>Intel hosts its first Sustainability Summit, bringing together suppliers, governments, and industry leaders to align on next-generation sustainable manufacturing practices. The summit establishes new benchmarks for supply chain transparency, emissions reporting, and collaborative environmental action across the global semiconductor ecosystem.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn modal-close-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

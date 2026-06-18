@@ -360,6 +360,86 @@ a:hover {
   top: 0;
 }
 
+/* ── Timeline Card Cursor ── */
+.timeline-card {
+  cursor: pointer;
+}
+
+/* ── Modal Styles ── */
+.timeline-modal {
+  border-radius: 24px;
+  overflow: hidden;
+  border: none;
+}
+
+.timeline-modal .modal-header {
+  background: linear-gradient(135deg, #0b3d91 0%, #1e64d2 100%);
+  border-bottom: none;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-year {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.timeline-modal .modal-body {
+  padding: 28px 28px 16px;
+}
+
+.modal-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.timeline-modal .modal-body h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #102a43;
+  margin-bottom: 12px;
+}
+
+.timeline-modal .modal-body p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #4a5568;
+  margin: 0;
+}
+
+.timeline-modal .modal-footer {
+  border-top: none;
+  padding: 16px 28px 24px;
+  justify-content: center;
+}
+
+.modal-close-btn {
+  background: linear-gradient(135deg, #0b3d91 0%, #1e64d2 100%);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 36px;
+  border-radius: 999px;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(30, 100, 210, 0.3);
+  color: #fff;
+}
+
 * {
   box-sizing: border-box;
 }
